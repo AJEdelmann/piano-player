@@ -25,6 +25,7 @@ body {
   font-style: italic;
 }
 
+/* =============Here starts the piano styling================ */
 .piano {
   width: 341.25px;
   height: 210px;
@@ -66,14 +67,20 @@ body {
   color: #141c3a;
 }
 
-.black-keynote {
+/* I am not using Black key note yet */
+/* .black-keynote {
   width: 20px;
   height: 20px;
   text-align: center;
   display: block;
   margin: 0 auto;
   margin-top: 75px;
-}
+} */
+
+/* =============Here ends the piano styling================ */
+
+
+/* =============Here starts the lyrics styling================ */
 
 #lyrics {
   width: 400px;
@@ -149,8 +156,12 @@ body {
   cursor: pointer;
 }
 
+/* =============Here ends the lyrics styling================ */
+
+/* =============Here starts the instructions page styling================ */
+/* Here I still have to do the global styling for my instructions section */
 .close {
-  /* background-color: aqua; */
+  /* background-color: ; */
 }
 
 .close1 {
@@ -213,11 +224,6 @@ body {
   color: #fff;
 }
 
-.instructions {
-  width: 100%;
-  height: 100%;
-}
-
 .text-instruction {
   width: 100%;
   height: 100%;
@@ -258,7 +264,7 @@ body {
   margin-right: 30%;
 }
 
-.left-hand {
+.left-hand-instruction {
   width: 100%;
   font-size: 1rem;
   text-align: center;
@@ -268,3 +274,5 @@ body {
 .active {
   transform: translateY(0%);
 }
+
+/* =============Here ends the instructions page styling================ */

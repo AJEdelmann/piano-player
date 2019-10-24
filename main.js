@@ -10,7 +10,9 @@ let kKey = document.getElementById('k-key');
 let lKey = document.getElementById('l-key');
 let semicolonKey = document.getElementById(';-key');
 
+// This array will be used in the future...as soon as I figure out how :(=)
 let keyArr = [aKey, sKey, dKey, fKey, vKey, nKey, jKey, kKey, lKey, semicolonKey];
+// keyArr.forEach(el => el.style.backgroundColor = '#6df0c2')
 
 // These variables store the buttons that progress the user through the lyrics
 let nextOne = document.getElementById('first-next-line');
@@ -26,8 +28,7 @@ nextTwo.hidden = true;
 nextThree.hidden = true;
 startOver.hidden = true;
 
-// keyArr.forEach(el => el.style.backgroundColor = '#6df0c2')
-
+// This function close the instructions with ESC
 document.onkeydown = e => {
   let music = document.querySelector(".instructions");
   let isActive = music.classList.contains("active");
@@ -40,7 +41,7 @@ document.onkeydown = e => {
 // Counter to move forward with lyrics stages
 let spaceCounter = 0;
 
-// this two event listener trigger the keyboard
+// this event listener trigger the piano sound on the keyboard, display the lyric by blocks and restart
 document.addEventListener('keydown', function (ev) {
   ev.preventDefault();
   if (ev.code == "KeyA") {
@@ -166,7 +167,7 @@ document.addEventListener('keydown', function (ev) {
   }
 })
 
-
+// This event listener reset the background color of the piano keys on key up
 document.addEventListener('keyup', function (ev) {
   ev.preventDefault();
   if (ev.code == "KeyA") {
@@ -201,11 +202,11 @@ document.addEventListener('keyup', function (ev) {
   }
 });
 
+// This function and the following two event listeners show the instructions and return to the piano by click
 togglePlayer = e => {
   let instructions = document.querySelector(".instructions");
   instructions.classList.toggle("active");
 }
 
 document.querySelector(".close").addEventListener("click", togglePlayer);
-
 document.querySelector(".close2").addEventListener("click", togglePlayer);
