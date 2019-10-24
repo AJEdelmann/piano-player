@@ -196,6 +196,7 @@ body {
   font-family: sans-serif;
   background: #b88105;
   background-size: cover;
+  overflow: hidden;
 }
 
 .start {
