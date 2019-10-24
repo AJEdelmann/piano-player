@@ -1,34 +1,57 @@
 // PAGE ELEMENTS
-let aKey = document.getElementById('a-key');
-let sKey = document.getElementById('s-key');
-let dKey = document.getElementById('d-key');
-let fKey = document.getElementById('f-key');
-let vKey = document.getElementById('v-key');
-let nKey = document.getElementById('n-key');
-let jKey = document.getElementById('j-key');
-let kKey = document.getElementById('k-key');
-let lKey = document.getElementById('l-key');
-let semicolonKey = document.getElementById(';-key');
+const aKey = document.getElementById("a-key");
+const sKey = document.getElementById("s-key");
+const dKey = document.getElementById("d-key");
+const fKey = document.getElementById("f-key");
+const vKey = document.getElementById("v-key");
+const nKey = document.getElementById("n-key");
+const jKey = document.getElementById("j-key");
+const kKey = document.getElementById("k-key");
+const lKey = document.getElementById("l-key");
+const semicolonKey = document.getElementById(";-key");
 
-// This array will be used in the future...as soon as I figure out how :(=)
-let keyArr = [aKey, sKey, dKey, fKey, vKey, nKey, jKey, kKey, lKey, semicolonKey];
-// keyArr.forEach(el => el.style.backgroundColor = '#6df0c2')
+const note1 = document.getElementById("letter-note-one");
+const note2 = document.getElementById("letter-note-two");
+const note3 = document.getElementById("letter-note-three");
+const note4 = document.getElementById("letter-note-four");
+const note5 = document.getElementById("letter-note-five");
+const note6 = document.getElementById("letter-note-six");
+const endNote = document.getElementById("column-optional");
+
+const word1 = document.getElementById("word-one");
+const word2 = document.getElementById("word-two");
+const word3 = document.getElementById("word-three");
+const word4 = document.getElementById("word-four");
+const word5 = document.getElementById("word-five");
+const word6 = document.getElementById("word-six");
 
 // These variables store the buttons that progress the user through the lyrics
-let nextOne = document.getElementById('first-next-line');
-let nextTwo = document.getElementById('second-next-line');
-let nextThree = document.getElementById('third-next-line');
-let startOver = document.getElementById('fourth-next-line');
-
-// This variable stores the '-END' lyric element
-let lastLyric = document.getElementById('column-optional');
+const nextOne = document.getElementById("first-next-line");
+const nextTwo = document.getElementById("second-next-line");
+const nextThree = document.getElementById("third-next-line");
+const startOver = document.getElementById("fourth-next-line");
 
 // These statements are "hiding" all the progress buttons, but the first one
 nextTwo.hidden = true;
 nextThree.hidden = true;
 startOver.hidden = true;
 
-// This function close the instructions with ESC
+// Global array
+const keyArr = [
+  aKey,
+  sKey,
+  dKey,
+  fKey,
+  vKey,
+  nKey,
+  jKey,
+  kKey,
+  lKey,
+  semicolonKey
+];
+
+// ==========================FUNCTIONS==============================
+// This function allow to close the instructions page with ESC
 document.onkeydown = e => {
   let music = document.querySelector(".instructions");
   let isActive = music.classList.contains("active");
@@ -36,177 +59,94 @@ document.onkeydown = e => {
   let close = document.querySelector(".close");
 
   if (isActive && keyCode == "Escape") close.click();
-}
+};
+
+// This function allow to trigger the key notes at any time
+const playKey = (id, key) => {
+  key.style.backgroundColor = "#03faef";
+  document.getElementById(id).pause();
+  document.getElementById(id).currentTime = 0;
+  document.getElementById(id).play();
+};
 
 // Counter to move forward with lyrics stages
 let spaceCounter = 0;
-
-// this event listener trigger the piano sound on the keyboard, display the lyric by blocks and restart
-document.addEventListener('keydown', function (ev) {
+// this function trigger the piano sound on the keyboard, display the lyric by blocks and restart
+document.addEventListener("keydown", function(ev) {
   ev.preventDefault();
-  if (ev.code == "KeyA") {
-    aKey.style.backgroundColor = "#03faef";
-    document.getElementById("mid-c").pause();
-    document.getElementById("mid-c").currentTime = 0;
-    document.getElementById("mid-c").play();
-  }
-  if (ev.code == "KeyS") {
-    sKey.style.backgroundColor = "#03faef";
-    document.getElementById("mid-d").pause();
-    document.getElementById("mid-d").currentTime = 0;
-    document.getElementById("mid-d").play();
-  }
-  if (ev.code == "KeyD") {
-    dKey.style.backgroundColor = "#03faef";
-    document.getElementById("high-e").pause();
-    document.getElementById("high-e").currentTime = 0;
-    document.getElementById("high-e").play();
-  }
-  if (ev.code == "KeyF") {
-    fKey.style.backgroundColor = "#927944";
-    document.getElementById("high-f").pause();
-    document.getElementById("high-f").currentTime = 0;
-    document.getElementById("high-f").play();
-  }
-  if (ev.code == "KeyV") {
-    vKey.style.backgroundColor = "#03faef";
-    document.getElementById("high-g").pause();
-    document.getElementById("high-g").currentTime = 0;
-    document.getElementById("high-g").play();
-  }
-  if (ev.code == "KeyN") {
-    nKey.style.backgroundColor = "#03faef";
-    document.getElementById("high-a").pause();
-    document.getElementById("high-a").currentTime = 0;
-    document.getElementById("high-a").play();
-  }
-  if (ev.code == "KeyJ") {
-    jKey.style.backgroundColor = "#03faef";
-    document.getElementById("high-b").pause();
-    document.getElementById("high-b").currentTime = 0;
-    document.getElementById("high-b").play();
-  }
-  if (ev.code == "KeyK") {
-    kKey.style.backgroundColor = "#03faef";
-    document.getElementById("mid-c").pause();
-    document.getElementById("mid-c").currentTime = 0;
-    document.getElementById("mid-c").play();
-  }
-  if (ev.code == "KeyL") {
-    lKey.style.backgroundColor = "#03faef";
-    document.getElementById("high-e").pause();
-    document.getElementById("high-d").currentTime = 0;
-    document.getElementById("high-d").play();
-  }
-  if (ev.code == 'Semicolon') {
-    semicolonKey.style.backgroundColor = "#03faef";
-    document.getElementById("high-e").pause();
-    document.getElementById("high-e").currentTime = 0;
-    document.getElementById("high-e").play();
-  }
+  if (ev.code == "KeyA") playKey("mid-c", aKey);
+  if (ev.code == "KeyS") playKey("mid-d", sKey);
+  if (ev.code == "KeyD") playKey("high-e", dKey);
+  if (ev.code == "KeyF") playKey("high-f", fKey);
+  if (ev.code == "KeyV") playKey("high-g", vKey);
+  if (ev.code == "KeyN") playKey("high-a", nKey);
+  if (ev.code == "KeyJ") playKey("high-b", jKey);
+  if (ev.code == "KeyK") playKey("mid-c", kKey);
+  if (ev.code == "KeyL") playKey("high-d", lKey);
+  if (ev.code == "Semicolon") playKey("high-e", semicolonKey);
   if (ev.code === "Space") {
-    spaceCounter++
+    spaceCounter++;
     if (spaceCounter == 1) {
       nextTwo.hidden = false;
       nextOne.hidden = true;
-      document.getElementById("letter-note-five").innerHTML = "R4";
-      document.getElementById("letter-note-six").innerHTML = "R3";
-
+      note5.innerHTML = "R4";
+      note6.innerHTML = "R3";
     } else if (spaceCounter == 2) {
       nextThree.hidden = false;
       nextTwo.hidden = true;
-
-      document.getElementById("word-five").innerHTML = "DEAR";
-      document.getElementById("word-six").innerHTML = "FRI-";
-
-      lastLyric.style.display = "inline-block";
-
-      document.getElementById("letter-note-three").innerHTML = "R5";
-      document.getElementById("letter-note-four").innerHTML = "R4";
-      document.getElementById("letter-note-five").innerHTML = "R3";
-      document.getElementById("letter-note-six").innerHTML = "R2";
-
+      word5.innerHTML = "DEAR";
+      word6.innerHTML = "FRI-";
+      endNote.style.display = "inline-block";
+      note3.innerHTML = "R5";
+      note4.innerHTML = "R4";
+      note5.innerHTML = "R3";
+      note6.innerHTML = "R2";
     } else if (spaceCounter == 3) {
       startOver.hidden = false;
       nextThree.hidden = true;
-
-      document.getElementById("word-one").innerHTML = "HAP-";
-      document.getElementById("word-two").innerHTML = "PY";
-      document.getElementById("word-three").innerHTML = "BIRTH";
-      document.getElementById("word-four").innerHTML = "DAY";
-      document.getElementById("word-five").innerHTML = "TO";
-      document.getElementById("word-six").innerHTML = "YOU!";
-
-      document.getElementById("letter-note-one").innerHTML = "L2";
-      document.getElementById("letter-note-two").innerHTML = "L2";
-      document.getElementById("letter-note-three").innerHTML = "R5";
-      document.getElementById("letter-note-four").innerHTML = "R3";
-      document.getElementById("letter-note-five").innerHTML = "R4";
-      document.getElementById("letter-note-six").innerHTML = "R3";
-
-      lastLyric.style.display = "none";
+      word1.innerHTML = "HAP-";
+      word2.innerHTML = "PY";
+      word3.innerHTML = "BIRTH";
+      word4.innerHTML = "DAY";
+      word5.innerHTML = "TO";
+      word6.innerHTML = "YOU!";
+      note1.innerHTML = "L2";
+      note2.innerHTML = "L2";
+      note3.innerHTML = "R5";
+      note4.innerHTML = "R3";
+      note5.innerHTML = "R4";
+      note6.innerHTML = "R3";
+      endNote.style.display = "none";
     }
   }
-  // This is the event handler function for the startOver button
-  if (ev.code == 'Enter') {
+  if (ev.code == "Enter") {
     nextOne.hidden = false;
     startOver.hidden = true;
-    document.getElementById('word-one').innerHTML = 'HAP-';
-    document.getElementById('letter-note-one').innerHTML = 'L1';
-    document.getElementById('word-two').innerHTML = 'PY';
-    document.getElementById('letter-note-two').innerHTML = 'L1';
-    document.getElementById('word-three').innerHTML = 'BIRTH-';
-    document.getElementById('letter-note-three').innerHTML = 'R1';
-    document.getElementById('word-four').innerHTML = 'DAY';
-    document.getElementById('letter-note-four').innerHTML = 'L1';
-    document.getElementById('word-five').innerHTML = 'TO';
-    document.getElementById('letter-note-five').innerHTML = 'R3';
-    document.getElementById('word-six').innerHTML = 'YOU';
-    document.getElementById('letter-note-six').innerHTML = 'R2';
+    word1.innerHTML = "HAP-";
+    note1.innerHTML = "L1";
+    word2.innerHTML = "PY";
+    note2.innerHTML = "L1";
+    word3.innerHTML = "BIRTH-";
+    note3.innerHTML = "R1";
+    word4.innerHTML = "DAY";
+    note4.innerHTML = "L1";
+    word5.innerHTML = "TO";
+    note5.innerHTML = "R3";
+    word6.innerHTML = "YOU";
+    note6.innerHTML = "R2";
     spaceCounter = 0;
-  }
-})
-
-// This event listener reset the background color of the piano keys on key up
-document.addEventListener('keyup', function (ev) {
-  ev.preventDefault();
-  if (ev.code == "KeyA") {
-    aKey.style.backgroundColor = "";
-  }
-  if (ev.code == "KeyS") {
-    sKey.style.backgroundColor = "";
-  }
-  if (ev.code == "KeyD") {
-    dKey.style.backgroundColor = "";
-  }
-  if (ev.code == "KeyF") {
-    fKey.style.backgroundColor = "";
-  }
-  if (ev.code == "KeyV") {
-    vKey.style.backgroundColor = "";
-  }
-  if (ev.code == "KeyN") {
-    nKey.style.backgroundColor = "";
-  }
-  if (ev.code == "KeyJ") {
-    jKey.style.backgroundColor = "";
-  }
-  if (ev.code == "KeyK") {
-    kKey.style.backgroundColor = "";
-  }
-  if (ev.code == "KeyL") {
-    lKey.style.backgroundColor = "";
-  }
-  if (ev.code == 'Semicolon') {
-    semicolonKey.style.backgroundColor = "";
   }
 });
 
+// This event listener reset the background color of the piano keys on key up
+document.addEventListener("keyup", function() {
+  keyArr.forEach(el => (el.style.backgroundColor = ""));
+});
+
 // This function and the following two event listeners show the instructions and return to the piano by click
-togglePlayer = e => {
-  let instructions = document.querySelector(".instructions");
-  instructions.classList.toggle("active");
-}
+togglePlayer = () => {
+  document.querySelector(".instructions").classList.toggle("active");
+};
 
 document.querySelector(".close").addEventListener("click", togglePlayer);
 document.querySelector(".close2").addEventListener("click", togglePlayer);
