@@ -63,7 +63,7 @@ document.addEventListener('keydown', function (ev) {
     document.getElementById("high-e").play();
   }
   if (ev.code == "KeyF") {
-    fKey.style.backgroundColor = "#03faef";
+    fKey.style.backgroundColor = "#927944";
     document.getElementById("high-f").pause();
     document.getElementById("high-f").currentTime = 0;
     document.getElementById("high-f").play();
