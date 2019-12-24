@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="instructions">
+        <div class="close close1">
+            <span class="start">&#9835; Start to play</span>
+            <div class="text-instruction">
+                <p class="p-instructions">Here is how you should place your hands on the keyboard.</p>
+                <img id="keyboard-img" src="img/pc_keyboard_controls_en.png" alt="">
+                <p class="p-numbering">Finger numbering</p>
+                <div class="finger-numbering-div">
+                    <p class="p-numbering-instructions">Legend: <br>
+                        R1 = right thumb <br>
+                        R2 = right index finger <br>
+                        R3 = right middle finger <br>
+                        R4 = right ringfinger <br>
+                        R5 = right little finger.</p>
+                    <img id="finger-positions-img" src="img/finger_positions_right_hand-no-numbers.png" alt="">
+                </div>
+                <p class="left-hand-instruction"> &#9835; For the left hand is the same logic, the notes are L1, L2, L3,
+                    L4 and L5
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="music">
+        <div class="close close2">
+            <span class="see-instructions">&#9835; Instructions</span>
+        </div>
+        <p class='title'>Piano Player</p>
+        <p id='demo'>Follow the song below to play the piano.</p>
+        <section id='lyrics'>
+            <section id='column-one'>
+                <section id="word-one">HAP-</section>
+                <section id="letter-note-one">L1</section>
+            </section>
+            <section id='column-two'>
+                <section id="word-two">PY</section>
+                <section id="letter-note-two">L1</section>
+            </section>
+            <section id='column-three'>
+                <section id="word-three">BIRTH-</section>
+                <section id="letter-note-three">R1</section>
+            </section>
+            <section id='column-four'>
+                <section id="word-four">DAY</section>
+                <section id="letter-note-four">L1</section>
+            </section>
+            <section id='column-five'>
+                <section id="word-five">TO</section>
+                <section id="letter-note-five">R3</section>
+            </section>
+            <section id='column-six'>
+                <section id="word-six">YOU</section>
+                <section id="letter-note-six">R2</section>
+            </section>
+            <section id='column-optional' class='column-optional'>
+                <section id="word-optional">END</section>
+                <section id="letter-note-optional">R1</section>
+            </section>
+
+            <button id="first-next-line">Space</button>
+            <button id="second-next-line">Space</button>
+            <button id="third-next-line">Space</button>
+            <button id="fourth-next-line">Enter</button>
+        </section>
+
+        <section class="piano">
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='a-key' class="key">
+                <section class='keynote'>L5</section>
+                <audio id="mid-c" src="audio/middle_c.mp3"></audio>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='s-key' class="key">
+                <section class='keynote'>L4</section>
+                <audio id="mid-d" src="audio/middle_d.mp3"></audio>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='d-key' class="key">
+                <section class='keynote'>L3</section>
+                <audio id="mid-e" src="audio/middle_e.mp3"></audio>
+            </section>
+            <section id='f-key' class="key">
+                <section class='keynote'>L2</section>
+                <audio id="high-f" src="audio/high_f.mp3"></audio>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+                <audio id="" src=""></audio>
+            </section>
+            <section id='v-key' class="key">
+                <section class='keynote'>L1</section>
+                <audio id="high-g" src="audio/high_g.mp3"></audio>
+            </section>
+            <section id='d-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+                <audio id="" src=""></audio>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='f-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='g-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='a-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='' class="key">
+                <div class='keynote'></div>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+                <audio id="" src=""></audio>
+            </section>
+            <section id='n-key' class="key">
+                <section class='keynote'>R1</section>
+                <audio id="high-a" src="audio/middle_a.mp3"></audio>
+            </section>
+            <section id='d-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+                <audio id="" src=""></audio>
+            </section>
+            <section id='j-key' class="key">
+                <section class='keynote'>R2</section>
+                <audio id="high-b" src="audio/high_b.mp3"></audio>
+            </section>
+            <section id='k-key' class="key">
+                <div class='keynote'>R3</div>
+                <audio id="mid-c" src="audio/c4.mp3"></audio>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='l-key' class="key">
+                <section class='keynote'>R4</section>
+                <audio id="high-d" src="audio/high_d.mp3"></audio>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id=';-key' class="key">
+                <section class='keynote'>R5</section>
+                <audio id="high-e" src="audio/high_e.mp3"></audio>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='c-sharp-key' class="black-key">
+                <section class='black-keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+            <section id='' class="key">
+                <section class='keynote'></section>
+            </section>
+
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

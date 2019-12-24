@@ -1,0 +1,284 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #090a18;
+}
+
+.title {
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#demo {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 15px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+/* =============Here starts the piano styling================ */
+.piano {
+  width: 100%;
+  height: 210px;
+  display: block;
+  margin: 0 auto;
+  background-color: #090a18;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.key {
+  width: 30px;
+  height: 200px;
+  display: inline-block;
+  border: solid #141c3a 0;
+  border-radius: 3px;
+  box-shadow: 2px 5px;
+  background-color: white;
+  color: #141c3a;
+}
+
+.black-key {
+  width: 25px;
+  height: 100px;
+  display: inline-block;
+  background-color: black;
+  color: white;
+  position: absolute;
+  margin-left: -12px;
+  padding: 0px;
+}
+
+.keynote {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 186px;
+  color: #141c3a;
+}
+
+/* I am not using Black key note yet */
+/* .black-keynote {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 75px;
+} */
+
+/* =============Here ends the piano styling================ */
+
+
+/* =============Here starts the lyrics styling================ */
+
+#lyrics {
+  width: 400px;
+  height: 240px;
+  display: block;
+  margin: 0 auto;
+  padding-left: 20px;
+  margin-top: 50px;
+  background-color: #3f94fd1c;
+}
+
+#column-one,
+#column-two,
+#column-three,
+#column-four,
+#column-five,
+#column-six,
+#column-optional {
+  width: 90px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#column-optional {
+  display: none;
+}
+
+#word-one,
+#word-two,
+#word-three,
+#word-four,
+#word-five,
+#word-six,
+#word-optional {
+  background-color: white;
+  width: 90px;
+  height: 25px;
+  padding-top: 10px;
+  letter-spacing: 5px;
+  color: #141c3a;
+  border-radius: 5px;
+}
+
+#letter-note-one,
+#letter-note-two,
+#letter-note-three,
+#letter-note-four,
+#letter-note-five,
+#letter-note-six,
+#letter-note-optional {
+  color: white;
+  width: 25px;
+  height: 25px;
+  margin-top: 15px;
+  margin-left: 35px;
+}
+
+#first-next-line,
+#second-next-line,
+#third-next-line,
+#fourth-next-line {
+  width: 90px;
+  height: 37.4px;
+  font-size: 16px;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: #ffc63f;
+  color: #141c3a;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* =============Here ends the lyrics styling================ */
+
+/* =============Here starts the instructions page styling================ */
+/* Here I still have to do the global styling for my instructions section */
+.close {
+  /* background-color: blue; */
+}
+
+.close1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5em;
+  color: #141c3a;
+  width: 100%;
+}
+
+.close2 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.instructions {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #b88105;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.start {
+  background: lightgrey;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.start:hover {
+  background: #090a18;
+  border-radius: 20px;
+  padding: 10px;
+  color: #fff;
+}
+
+.see-instructions {
+  background: #3f94fd1c;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.see-instructions:hover {
+  background: #d89a15a6;
+  border-radius: 20px;
+  padding: 10px;
+  color: #fff;
+}
+
+.text-instruction {
+  width: 100%;
+  height: 100%;
+  font-family: monospace;
+}
+
+.p-instructions {
+  text-align: center;
+  margin-block-start: 0.3rem;
+  font-weight: bold;
+}
+
+#keyboard-img {
+  display: flex;
+  width: 40%;
+  position: relative;
+  top: -22px;
+  left: 29%;
+}
+
+.p-numbering {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.p-numbering-instructions {
+  width: 60%;
+  margin-left: 30%;
+  font-size: 1.1rem;
+}
+
+.finger-numbering-div {
+  display: flex;
+}
+
+#finger-positions-img {
+  width: 12%;
+  height: 50%;
+  margin-right: 30%;
+}
+
+.left-hand-instruction {
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.active {
+  transform: translateY(0%);
+}
+
+/* =============Here ends the instructions page styling================ */
